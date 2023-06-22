@@ -27,6 +27,11 @@ path = 'contracts/vde001-proposal-voting.clar'
 clarity_version = 1
 epoch = 2.0
 
+[contracts.vde002-proposal-submission]
+path = 'contracts/vde002-proposal-submission.clar'
+clarity_version = 1
+epoch = 2.0
+
 [contracts.vibeDAO]
 path = 'contracts/vibeDAO.clar'
 clarity_version = 1
