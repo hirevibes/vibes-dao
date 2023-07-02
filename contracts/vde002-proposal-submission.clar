@@ -10,8 +10,8 @@
 
 (define-map parameters (string-ascii 34) uint)
 
-(map-set parameters "propose-factor" u100000) ;; 1% initially required to propose (100/n*1000).
-(map-set parameters "proposal-duration" u1440) ;; ~10 days based on a ~10 minute block time.
+(map-set parameters "propose-factor" u10000) ;; 10000 $VIBES required to propose.
+(map-set parameters "proposal-duration" u1008) ;; ~7 days based on a ~10 minute block time.
 (map-set parameters "minimum-proposal-start-delay" u144) ;; ~1 day minimum delay before voting on a proposal can start.
 (map-set parameters "maximum-proposal-start-delay" u1008) ;; ~7 days maximum delay before voting on a proposal can start.
 
