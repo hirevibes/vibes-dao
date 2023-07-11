@@ -22,7 +22,7 @@
 
 ;; --- Public functions
 
-(define-public (vibe-lock (amount uint) (owner principal))
+(define-public (vibe-lock (amount uint))
 	(begin
 		(try! (is-dao-or-extension))
 		(try! (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer amount tx-sender treasury-address none))

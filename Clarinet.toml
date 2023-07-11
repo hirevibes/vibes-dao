@@ -13,8 +13,6 @@ contract_id = 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait'
 
 [[project.requirements]]
 contract_id = 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard'
-
-
 [contracts.extension-trait]
 path = 'contracts/extension-trait.clar'
 clarity_version = 1
@@ -49,6 +47,11 @@ epoch = 2.0
 path = 'contracts/vde004-emergency-execute.clar'
 clarity_version = 1
 epoch = 2.0
+
+[contracts.vdp000-bootstrap]
+path = 'contracts/vdp000-bootstrap.clar'
+clarity_version = 2
+epoch = 2.1
 
 [contracts.vibeDAO]
 path = 'contracts/vibeDAO.clar'

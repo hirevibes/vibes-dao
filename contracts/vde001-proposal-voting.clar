@@ -77,7 +77,7 @@
 			)
 		)
 		(print {event: "vote", proposal: proposal, voter: tx-sender, for: for, amount: amount})
-		(contract-call? .vde000-treasury vibe-lock amount tx-sender)
+		(contract-call? .vde000-treasury vibe-lock amount)
 	)
 )
 
