@@ -69,6 +69,18 @@
   )
 )
 
+(define-public (deposit-vibes (amount uint))
+  (begin
+    (try! (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer amount tx-sender treasury-address none))
+    (print {
+      event: "deposit-vibes",
+      amount: amount,
+      caller: tx-sender
+    })
+    (ok true)
+  )
+)
+
 (define-public (deposit-sip9 (asset <sip9>) (id uint))
   (begin
     (asserts! (is-whitelisted (contract-of asset)) err-asset-not-whitelisted)
@@ -97,6 +109,16 @@
   )
 )
 
+(define-public (vibes-transfer (amount uint) (recipient principal) (memo (optional (buff 34))))
+  (begin
+    (try! (is-dao-or-extension))
+    (match memo with-memo (print with-memo) 0x)
+    (try! (as-contract (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer amount treasury-address recipient memo)))
+    (print { event: "vibes-transfer", amount: amount, recipient: recipient, memo: (if (is-none memo) none (some memo)), caller: tx-sender })
+    (ok true)
+  )
+)
+
 (define-public (sip9-transfer (tokenId uint) (recipient principal) (asset <sip9>))
   (begin
     (try! (is-dao-or-extension))
@@ -121,6 +143,14 @@
   (begin
     (try! (is-dao-or-extension))
     (as-contract (fold stx-transfer-many-iter payload (ok true)))
+  )
+)
+
+;;vibe-transfer-many
+(define-public (vibes-transfer-many (payload (list 200 { amount: uint, recipient: principal, memo: (optional (buff 34)) })))
+  (begin
+    (try! (is-dao-or-extension))
+    (as-contract (fold vibes-transfer-many-iter payload (ok true)))
   )
 )
 
@@ -171,6 +201,16 @@
     (match (get memo data) with-memo (print with-memo) 0x)
     (print { event: "stx-transfer", amount: (get amount data), recipient: (get recipient data), memo: (if (is-none (get memo data)) none (some (get memo data))), caller: tx-sender })
     (stx-transfer? (get amount data) treasury-address (get recipient data))
+  )
+)
+
+;;vibe-transfer-many-iter
+(define-private (vibes-transfer-many-iter (data { amount: uint, recipient: principal, memo: (optional (buff 34)) }) (previousResult (response bool uint)))
+  (begin
+    (try! previousResult)
+    (match (get memo data) with-memo (print with-memo) 0x)
+    (print { event: "vibes-transfer", amount: (get amount data), recipient: (get recipient data), memo: (if (is-none (get memo data)) none (some (get memo data))), caller: tx-sender })
+    (as-contract (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer (get amount data) treasury-address (get recipient data) (get memo data)))
   )
 )
 
