@@ -6,47 +6,53 @@ telemetry = false
 cache_dir = '.\.cache'
 
 [[project.requirements]]
-contract_id = 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token'
-
-[[project.requirements]]
 contract_id = 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait'
 
 [[project.requirements]]
 contract_id = 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard'
+
+[[project.requirements]]
+contract_id = 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token'
+
 [contracts.extension-trait]
 path = 'contracts/extension-trait.clar'
 clarity_version = 1
-epoch = 2.0
+epoch = 2.1
 
 [contracts.proposal-trait]
 path = 'contracts/proposal-trait.clar'
 clarity_version = 1
-epoch = 2.0
+epoch = 2.1
 
 [contracts.vde000-treasury]
 path = 'contracts/vde000-treasury.clar'
 clarity_version = 1
-epoch = 2.0
+epoch = 2.1
 
 [contracts.vde001-proposal-voting]
 path = 'contracts/vde001-proposal-voting.clar'
 clarity_version = 1
-epoch = 2.0
+epoch = 2.1
 
 [contracts.vde002-proposal-submission]
 path = 'contracts/vde002-proposal-submission.clar'
 clarity_version = 1
-epoch = 2.0
+epoch = 2.1
 
 [contracts.vde003-emergency-proposals]
 path = 'contracts/vde003-emergency-proposals.clar'
 clarity_version = 1
-epoch = 2.0
+epoch = 2.1
 
 [contracts.vde004-emergency-execute]
 path = 'contracts/vde004-emergency-execute.clar'
 clarity_version = 1
-epoch = 2.0
+epoch = 2.1
+
+[contracts.vde005-council]
+path = 'contracts/vde005-council.clar'
+clarity_version = 2
+epoch = 2.1
 
 [contracts.vdp000-bootstrap]
 path = 'contracts/vdp000-bootstrap.clar'
@@ -56,7 +62,7 @@ epoch = 2.1
 [contracts.vibeDAO]
 path = 'contracts/vibeDAO.clar'
 clarity_version = 1
-epoch = 2.0
+epoch = 2.1
 [repl.analysis]
 passes = ['check_checker']
 
