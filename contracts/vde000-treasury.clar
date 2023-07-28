@@ -146,7 +146,7 @@
   )
 )
 
-;;vibe-transfer-many
+
 (define-public (vibes-transfer-many (payload (list 200 { amount: uint, recipient: principal, memo: (optional (buff 34)) })))
   (begin
     (try! (is-dao-or-extension))
