@@ -12,6 +12,8 @@
 (define-constant err-end-block-height-not-reached (err u3009))
 (define-constant err-disabled (err u3010))
 
+(define-constant locker-address (as-contract tx-sender))
+
 (define-map proposals
 	principal
 	{
@@ -46,6 +48,24 @@
 	)
 )
 
+;; Locking and unlocking tokens
+
+(define-public (vibe-lock (amount uint))
+	(begin
+		(try! (is-dao-or-extension))
+		(try! (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer amount tx-sender locker-address none))
+		(ok true)
+	)
+)
+
+(define-public (vibe-unlock (amount uint) (owner principal))
+	(begin
+		(try! (is-dao-or-extension))
+		(try! (as-contract (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer amount tx-sender owner none)))
+		(ok true)
+	)
+)
+
 ;; --- Public functions
 
 ;; Proposals
@@ -77,7 +97,7 @@
 			)
 		)
 		(print {event: "vote", proposal: proposal, voter: tx-sender, for: for, amount: amount})
-		(contract-call? .vde000-treasury vibe-lock amount)
+		(vibe-lock amount)
 	)
 )
 
@@ -109,7 +129,7 @@
 		)
 		(asserts! (get concluded proposal-data) err-proposal-not-concluded)
 		(map-delete member-total-votes {proposal: proposal-principal, voter: tx-sender})
-		(contract-call? .vde000-treasury vibe-unlock votes tx-sender)
+		(vibe-unlock votes tx-sender)
 	)
 )
 
