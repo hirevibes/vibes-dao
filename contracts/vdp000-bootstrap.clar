@@ -20,6 +20,7 @@
 				{extension: .vde002-proposal-submission, enabled: true}
 				{extension: .vde003-emergency-proposals, enabled: true}
 				{extension: .vde004-emergency-execute, enabled: true}
+				{extension: .vde005-council, enabled: true}
 			)
 		))
 
@@ -34,6 +35,8 @@
 		(try! (contract-call? .vde004-emergency-execute set-executive-team-member 'ST2XTTPFAPSHCPSK905V7C93RBXWFZ4YH8A8FBWV true))
 		(try! (contract-call? .vde004-emergency-execute set-signals-required u3)) ;; signal from 3 out of 4 team members requied.
 
+		(try! (contract-call? .vde005-council set-council-member 'ST3B5YKP344KCZ5Q8VKA5PNRF3X546PMP80EMWC10 true))
+		(try! (contract-call? .vde005-council set-council-member 'ST7F9EMG5A9BKVBG8N6Q2KD2NQNGXMPB5PQF49Z7 true))
 		(try! (contract-call? .vde005-council set-approvals-required u3)) ;; approvals from 3 out of 4 team members requied.
 
 
