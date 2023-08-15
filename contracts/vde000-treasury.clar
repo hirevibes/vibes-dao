@@ -22,21 +22,6 @@
 
 ;; --- Public functions
 
-(define-public (vibe-lock (amount uint))
-	(begin
-		(try! (is-dao-or-extension))
-		(try! (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer amount tx-sender treasury-address none))
-		(ok true)
-	)
-)
-
-(define-public (vibe-unlock (amount uint) (owner principal))
-	(begin
-		(try! (is-dao-or-extension))
-		(try! (as-contract (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer amount tx-sender owner none)))
-		(ok true)
-	)
-)
 
 (define-public (set-whitelist (token principal) (enabled bool))
   (begin
