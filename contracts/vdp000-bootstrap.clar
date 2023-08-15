@@ -34,6 +34,8 @@
 		(try! (contract-call? .vde004-emergency-execute set-executive-team-member 'ST2XTTPFAPSHCPSK905V7C93RBXWFZ4YH8A8FBWV true))
 		(try! (contract-call? .vde004-emergency-execute set-signals-required u3)) ;; signal from 3 out of 4 team members requied.
 
+		(try! (contract-call? .vde005-council set-approvals-required u3)) ;; approvals from 3 out of 4 team members requied.
+
 
 		(print "ExecutorDAO has risen.")
 		(ok true)
