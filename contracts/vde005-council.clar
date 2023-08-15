@@ -4,6 +4,7 @@
 (define-constant err-unauthorised (err u3000))
 (define-constant err-not-council-member (err u3001))
 (define-constant err-proposal-not-found (err u3002))
+(define-constant err-funds-already-unlocked (err u3003))
 
 (define-constant council-address (as-contract tx-sender))
 
@@ -71,7 +72,12 @@
 			(signals (+ (get-approvals proposal-address) (if (has-approved proposal-address tx-sender) u0 u1)))
 		)
 		(asserts! (is-council-member tx-sender) err-not-council-member)
+		(asserts! (is-eq (get paid data) false) err-funds-already-unlocked)
+
 		(and (>= signals (var-get council-approvals-required))
+			(map-set proposal-funds {proposal: proposal-address} 
+				(merge data {paid: true})
+			)
 			(try! (as-contract (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer (get amount data) tx-sender (get proposer data) none)))
 		)
 		(map-set council-approvals {proposal: proposal-address, team-member: tx-sender} true)
