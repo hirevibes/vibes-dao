@@ -1,0 +1,14 @@
+Mar 02 07:34:23.491 INFO Checking contracts
+Mar 02 07:34:23.549 INFO Starting Devnet
+Mar 02 07:34:23.556 INFO Listening on port 20445 for Stacks chain events
+Mar 02 07:34:23.556 INFO Observing Bitcoin chain events via Stacks node
+Mar 02 07:34:23.562 INFO Initiating Devnet boot sequence (working_dir: D:\Code\Clarity\hireVibes\HireVibesDAO\.\.cache\stacks-devnet-1709364863)
+Mar 02 07:34:23.572 INFO Creating network HireVibesDAO.devnet
+Mar 02 07:34:23.574 INFO Starting bitcoin-node
+Mar 02 07:34:39.940 INFO Created container bitcoin-node: 27a806f76083e27c722594ed2dbfe8d47e044bb4c9fd3bef61bddd9fd4dcf11e
+Mar 02 07:34:40.425 ERRO Fatal: unable to start bitcoind container: network HireVibesDAO.devnet is ambiguous (2 matches found on name)
+Mar 02 07:34:40.429 INFO Handling Termination command
+Mar 02 07:34:40.445 INFO Terminating bitcoin-node
+Mar 02 07:34:40.500 INFO Pruning network and containers
+Mar 02 07:34:41.517 INFO Artifacts (logs, conf, chainstates) available here: D:\Code\Clarity\hireVibes\HireVibesDAO\.\.cache\stacks-devnet-1709364863
+Mar 02 07:34:41.518 INFO ⚠️  fatal error - unable to start bitcoind container: network HireVibesDAO.devnet is ambiguous (2 matches found on name)

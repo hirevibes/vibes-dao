@@ -1,0 +1,12 @@
+Mar 02 07:13:17.239 INFO Checking contracts
+Mar 02 07:13:17.291 INFO Starting Devnet
+Mar 02 07:13:17.312 INFO Initiating Devnet boot sequence (working_dir: D:\Code\Clarity\hireVibes\HireVibesDAO\.\.cache\stacks-devnet-1709363596)
+Mar 02 07:13:17.324 INFO Creating network HireVibesDAO.devnet
+Mar 02 07:13:17.326 INFO Starting bitcoin-node
+Mar 02 07:13:18.433 INFO Created container bitcoin-node: ad9aa19a44d25894ef8e5d9c68f66bb6c033a3b4fe262c79519122176de4d5f6
+Mar 02 07:13:18.579 ERRO Fatal: unable to start bitcoind container: DockerResponseBadParameterError { message: "{\"message\":\"network HireVibesDAO.devnet is ambiguous (2 matches found on name)\"}\n" }
+Mar 02 07:13:18.581 INFO Handling Termination command
+Mar 02 07:13:18.599 INFO Terminating bitcoin-node
+Mar 02 07:13:18.625 INFO Pruning network and containers
+Mar 02 07:13:19.244 INFO Artifacts (logs, conf, chainstates) available here: D:\Code\Clarity\hireVibes\HireVibesDAO\.\.cache\stacks-devnet-1709363596
+Mar 02 07:13:19.244 INFO ⚠️  fatal error - unable to start bitcoind container: DockerResponseBadParameterError { message: "{\"message\":\"network HireVibesDAO.devnet is ambiguous (2 matches found on name)\"}\n" }

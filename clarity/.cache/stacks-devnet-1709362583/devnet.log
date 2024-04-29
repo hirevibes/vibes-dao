@@ -1,0 +1,31 @@
+Mar 02 06:56:23.628 INFO Checking contracts
+Mar 02 06:56:23.680 INFO Starting Devnet
+Mar 02 06:56:23.702 INFO Initiating Devnet boot sequence (working_dir: D:\Code\Clarity\hireVibes\HireVibesDAO\.\.cache\stacks-devnet-1709362583)
+Mar 02 06:56:23.713 INFO Creating network HireVibesDAO.devnet
+Mar 02 06:56:23.715 INFO Starting bitcoin-node
+Mar 02 06:56:33.057 INFO Created container bitcoin-node: 6e3b34e53a7f928c1920e7f4dce17375948be6cf7a3740ca6072776365fd3b23
+Mar 02 06:56:35.173 INFO Configuring bitcoin-node
+Mar 02 06:56:36.829 INFO Registering addr(n3GRiDLKWuKLCw1DZmV75W1mE35qmW2tQm)#dm832d0a
+Mar 02 06:56:36.939 INFO Registering addr(mjSrB3wS4xab3kYqFktwBzfTdPg367ZJ2d)#kdxvqwc5
+Mar 02 06:56:39.868 INFO Registering addr(mqVnk6NPRdhntvfm4hh9vvjiRkFDUuSYsH)#ypxkdrsq
+Mar 02 06:56:40.896 INFO Registering addr(mjSrB3wS4xab3kYqFktwBzfTdPg367ZJ2d)#kdxvqwc5
+Mar 02 06:56:41.611 INFO Registering addr(mr1iPkD9N3RJZZxXRk7xF9d36gffa6exNC)#n3uhsuqz
+Mar 02 06:56:42.252 INFO Registering addr(muYdXKmX9bByAueDe6KFfHd5Ff1gdN9ErG)#0ayck9fm
+Mar 02 06:56:43.018 INFO Registering addr(mvZtbibDAAA3WLpY7zXXFqRa3T4XSknBX7)#hkf7ujwt
+Mar 02 06:56:43.643 INFO Registering addr(mg1C76bNTutiCDV3t9nWhZs3Dc8LzUufj8)#gtqjph77
+Mar 02 06:56:44.257 INFO Registering addr(mweN5WVqadScHdA81aATSdcVr4B6dNokqx)#qz3ysrq0
+Mar 02 06:56:44.850 INFO Registering addr(mzxXgV6e4BZSsz8zVHm3TmqbECt7mbuErt)#pnqz0pm8
+Mar 02 06:56:45.535 INFO Registering addr(n37mwmru2oaVosgfuvzBwgV2ysCQRrLko7)#lh2paj0q
+Mar 02 06:56:46.488 INFO Registering addr(n2v875jbJ4RjBnTjgbfikDfnwsDV5iUByw)#8606llct
+Mar 02 06:56:47.215 INFO Starting postgres
+Mar 02 06:57:31.796 INFO Created container postgres: 88e086fb761ead112a01549d3467a7c4ca951077196772984fbba0fddb74ccfb
+Mar 02 06:57:32.757 INFO Starting stacks-api
+Mar 02 07:02:00.001 INFO Created container stacks-api: b6fc72e2738652f2db0da397b1ace6b5b91a8f06b46d29c79494834c2a08e2ae
+Mar 02 07:02:06.609 INFO Starting stacks-node
+Mar 02 07:02:48.649 INFO Created container stacks-node: a6a83929e10fba95defb07fd7a634e6cb99f22b871dc45e7af00df6f2e493892
+Mar 02 07:03:31.609 INFO Created container stacks-explorer: 3c24af067e1a0de86dffa77a679edf648ba9d0777048037695c2cd33a7809424
+Mar 02 07:03:31.611 INFO Starting stacks-explorer
+Mar 02 07:04:43.060 INFO Created container bitcoin-explorer: 6f50ad882c863920b5b6ec2d36b87d741051c9370b5d1104f1c5ae6a3bc40470
+Mar 02 07:04:43.061 INFO Starting bitcoin-explorer
+Mar 02 07:12:04.937 WARN Ctrl+C received, initiating termination sequence.
+Mar 02 07:12:05.040 INFO Handling Termination command

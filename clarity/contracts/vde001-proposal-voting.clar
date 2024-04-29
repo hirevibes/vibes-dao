@@ -109,6 +109,10 @@
 			(proposal-data (unwrap! (map-get? proposals (contract-of proposal)) err-unknown-proposal))
 			(passed (> (get votes-for proposal-data) (get votes-against proposal-data)))
 		)
+
+		;; only the original proposer can conclude the proposal
+		(asserts! (is-eq tx-sender (get proposer proposal-data)) err-unauthorised)
+
 		(asserts! (not (get concluded proposal-data)) err-proposal-already-concluded)
 		(asserts! (>= block-height (get end-block-height proposal-data)) err-end-block-height-not-reached)
 		(map-set proposals (contract-of proposal) (merge proposal-data {concluded: true, passed: passed}))

@@ -1,0 +1,10 @@
+Mar 02 07:12:28.724 INFO Checking contracts
+Mar 02 07:12:28.787 INFO Starting Devnet
+Mar 02 07:12:28.806 INFO Initiating Devnet boot sequence (working_dir: D:\Code\Clarity\hireVibes\HireVibesDAO\.\.cache\stacks-devnet-1709363546)
+Mar 02 07:12:28.817 INFO Creating network HireVibesDAO.devnet
+Mar 02 07:12:28.819 INFO Starting bitcoin-node
+Mar 02 07:12:33.987 ERRO Fatal: unable to create bitcoind container: DockerResponseConflictError { message: "{\"message\":\"Conflict. The container name \\\"/bitcoin-node.HireVibesDAO.devnet\\\" is already in use by container \\\"6e3b34e53a7f928c1920e7f4dce17375948be6cf7a3740ca6072776365fd3b23\\\". You have to remove (or rename) that container to be able to reuse that name.\"}\n" }
+Mar 02 07:12:33.991 INFO Handling Termination command
+Mar 02 07:12:34.061 INFO Pruning network and containers
+Mar 02 07:12:34.894 INFO Artifacts (logs, conf, chainstates) available here: D:\Code\Clarity\hireVibes\HireVibesDAO\.\.cache\stacks-devnet-1709363546
+Mar 02 07:12:34.894 INFO ⚠️  fatal error - unable to create bitcoind container: DockerResponseConflictError { message: "{\"message\":\"Conflict. The container name \\\"/bitcoin-node.HireVibesDAO.devnet\\\" is already in use by container \\\"6e3b34e53a7f928c1920e7f4dce17375948be6cf7a3740ca6072776365fd3b23\\\". You have to remove (or rename) that container to be able to reuse that name.\"}\n" }

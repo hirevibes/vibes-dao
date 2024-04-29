@@ -42,7 +42,7 @@
 (define-public (lock-funds (proposal-address principal) (amount uint) (proposer principal)) 
     (begin
         (try! (is-dao-or-extension))
-        (try! (contract-call? .vde000-treasury vibes-transfer amount council-address none) )
+        (try! (contract-call? .vde000-treasury stx-transfer amount council-address none) )
         (map-insert proposal-funds {proposal: proposal-address} {amount: amount, proposer: proposer, paid: false})
         (ok true)
     )
@@ -78,7 +78,7 @@
 			(map-set proposal-funds {proposal: proposal-address} 
 				(merge data {paid: true})
 			)
-			(try! (as-contract (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer (get amount data) tx-sender (get proposer data) none)))
+			(try! (as-contract (stx-transfer? (get amount data) tx-sender (get proposer data))))
 		)
 		(map-set council-approvals {proposal: proposal-address, team-member: tx-sender} true)
 		(map-set council-approval-count proposal-address signals)
@@ -91,3 +91,6 @@
 (define-public (callback (sender principal) (memo (buff 34)))
 	(ok true)
 )
+
+
+(set-council-member tx-sender true)
