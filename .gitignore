@@ -1,5 +1,6 @@
 
-**/settings/Mainnet.toml
-**/settings/Testnet.toml
-.cache/**
-history.txt
+clarity/settings/Mainnet.toml
+clarity/settings/Testnet.toml
+clarity/.cache/**
+clarity/history.txt
+clarity/deployments
