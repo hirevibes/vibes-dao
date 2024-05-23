@@ -28,6 +28,7 @@
 )
 
 (define-map member-total-votes {proposal: principal, voter: principal} uint)
+(define-map total-locked-tokens {voter: principal} uint)
 
 ;; --- Authorisation check
 
@@ -51,17 +52,25 @@
 ;; Locking and unlocking tokens
 
 (define-public (vibe-lock (amount uint))
-	(begin
+	(let
+		(
+			(locked (default-to u0 (map-get? total-locked-tokens {voter: tx-sender})))
+		)
 		(try! (is-dao-or-extension))
 		(try! (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer amount tx-sender locker-address none))
+		(map-set total-locked-tokens {voter: tx-sender} (+ locked amount))
 		(ok true)
 	)
 )
 
 (define-public (vibe-unlock (amount uint) (owner principal))
-	(begin
+	(let
+		(
+			(locked (default-to u0 (map-get? total-locked-tokens {voter: owner})))
+		)
 		(try! (is-dao-or-extension))
 		(try! (as-contract (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer amount tx-sender owner none)))
+		(map-set total-locked-tokens {voter: owner} (- locked amount))
 		(ok true)
 	)
 )
@@ -79,6 +88,11 @@
 (define-read-only (get-current-total-votes (proposal principal) (voter principal))
 	(default-to u0 (map-get? member-total-votes {proposal: proposal, voter: voter}))
 )
+
+(define-read-only (get-total-locked-tokens (voter principal))
+	(default-to u0 (map-get? total-locked-tokens {voter: voter}))
+)
+
 
 (define-public (vote (amount uint) (for bool) (proposal principal))
 	(let
