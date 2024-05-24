@@ -51,24 +51,22 @@
 
 ;; Locking and unlocking tokens
 
-(define-public (vibe-lock (amount uint))
+(define-private (vibe-lock (amount uint))
 	(let
 		(
 			(locked (default-to u0 (map-get? total-locked-tokens {voter: tx-sender})))
 		)
-		(try! (is-dao-or-extension))
 		(try! (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer amount tx-sender locker-address none))
 		(map-set total-locked-tokens {voter: tx-sender} (+ locked amount))
 		(ok true)
 	)
 )
 
-(define-public (vibe-unlock (amount uint) (owner principal))
+(define-private (vibe-unlock (amount uint) (owner principal))
 	(let
 		(
 			(locked (default-to u0 (map-get? total-locked-tokens {voter: owner})))
 		)
-		(try! (is-dao-or-extension))
 		(try! (as-contract (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token transfer amount tx-sender owner none)))
 		(map-set total-locked-tokens {voter: owner} (- locked amount))
 		(ok true)
