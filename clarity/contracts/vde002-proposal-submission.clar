@@ -60,8 +60,8 @@
 
 (define-public (propose (proposal <proposal-trait>) (start-block-height uint))
 	(begin
-		(asserts! (>= start-block-height (+ block-height (try! (get-parameter "minimum-proposal-start-delay")))) err-proposal-minimum-start-delay)
-		(asserts! (<= start-block-height (+ block-height (try! (get-parameter "maximum-proposal-start-delay")))) err-proposal-maximum-start-delay)
+		(asserts! (>= start-block-height (+ burn-block-height (try! (get-parameter "minimum-proposal-start-delay")))) err-proposal-minimum-start-delay)
+		(asserts! (<= start-block-height (+ burn-block-height (try! (get-parameter "maximum-proposal-start-delay")))) err-proposal-maximum-start-delay)
 		(asserts! (>= (unwrap-panic (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token get-balance tx-sender)) (try! (get-parameter "propose-factor"))) err-insufficient-balance)
 		(contract-call? .vde001-proposal-voting add-proposal
 			proposal

@@ -97,8 +97,8 @@
 		(
 			(proposal-data (unwrap! (map-get? proposals proposal) err-unknown-proposal))
 		)
-		(asserts! (>= block-height (get start-block-height proposal-data)) err-proposal-inactive)
-		(asserts! (< block-height (get end-block-height proposal-data)) err-proposal-inactive)
+		(asserts! (>= burn-block-height (get start-block-height proposal-data)) err-proposal-inactive)
+		(asserts! (< burn-block-height (get end-block-height proposal-data)) err-proposal-inactive)
 		(map-set member-total-votes {proposal: proposal, voter: tx-sender}
 			(+ (get-current-total-votes proposal tx-sender) amount)
 		)
@@ -126,7 +126,7 @@
 		(asserts! (is-eq tx-sender (get proposer proposal-data)) err-unauthorised)
 
 		(asserts! (not (get concluded proposal-data)) err-proposal-already-concluded)
-		(asserts! (>= block-height (get end-block-height proposal-data)) err-end-block-height-not-reached)
+		(asserts! (>= burn-block-height (get end-block-height proposal-data)) err-end-block-height-not-reached)
 		(map-set proposals (contract-of proposal) (merge proposal-data {concluded: true, passed: passed}))
 		(print {event: "conclude", proposal: proposal, passed: passed})
 		(and passed (try! (contract-call? .vibeDAO execute proposal tx-sender)))
