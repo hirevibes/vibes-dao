@@ -163,9 +163,18 @@
   (map-get? whitelisted-assets assetContract)
 )
 
-(define-read-only (get-balance)
+(define-read-only (get-stx-balance)
   (stx-get-balance treasury-address)
 )
+
+(define-read-only (get-vibes-balance)
+  (unwrap-panic (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token get-balance treasury-address))
+)
+
+(define-public (get-sip10-balance (asset <sip10>))
+  (contract-call? asset get-balance treasury-address)
+)
+
 
 (define-private (set-whitelist-iter (data { token: principal, enabled: bool }))
   (begin
