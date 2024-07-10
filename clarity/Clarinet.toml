@@ -40,7 +40,7 @@ epoch = 2.1
 
 [contracts.vde002-proposal-submission]
 path = 'contracts/vde002-proposal-submission.clar'
-clarity_version = 1
+clarity_version = 2
 epoch = 2.1
 
 [contracts.vde003-emergency-proposals]

@@ -15,6 +15,8 @@
 (map-set parameters "minimum-proposal-start-delay" u1) ;; ~1 block minimum delay before voting on a proposal can start.
 (map-set parameters "maximum-proposal-start-delay" u1008) ;; ~7 days maximum delay before voting on a proposal can start.
 
+(define-constant pubKey 0x035feea9cee6589bab535144735e9f9d579735dd79c7cdc71e4a008d4850939405)
+
 ;; --- Authorisation check
 
 (define-public (is-dao-or-extension)
@@ -48,6 +50,13 @@
 	)
 )
 
+;; Hashing
+
+(define-private (make-hash (proposal-principal principal)) 
+
+    (sha256 (unwrap-panic (to-consensus-buff? {proposalPrincipal: proposal-principal, sender: tx-sender})))
+)
+
 ;; --- Public functions
 
 ;; Parameters
@@ -58,8 +67,11 @@
 
 ;; Proposals
 
-(define-public (propose (proposal <proposal-trait>) (start-block-height uint))
+(define-public (propose (proposal <proposal-trait>) (start-block-height uint) (signature (buff 65)))
 	(begin
+		;; check if the proposal is submitted from the HireVibes Website
+		(asserts! (secp256k1-verify (make-hash (contract-of proposal)) signature pubKey) err-unauthorised)
+
 		(asserts! (>= start-block-height (+ burn-block-height (try! (get-parameter "minimum-proposal-start-delay")))) err-proposal-minimum-start-delay)
 		(asserts! (<= start-block-height (+ burn-block-height (try! (get-parameter "maximum-proposal-start-delay")))) err-proposal-maximum-start-delay)
 		(asserts! (>= (unwrap-panic (contract-call? 'SP27BB1Y2DGSXZHS7G9YHKTSH6KQ6BD3QG0AN3CR9.vibes-token get-balance tx-sender)) (try! (get-parameter "propose-factor"))) err-insufficient-balance)
