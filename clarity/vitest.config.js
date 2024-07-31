@@ -2,6 +2,7 @@
 
 import { defineConfig } from "vite";
 import { vitestSetupFilePath, getClarinetVitestsArgv } from "@hirosystems/clarinet-sdk/vitest";
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 /*
   In this file, Vitest is configured so that it works seamlessly with Clarinet and the Simnet.
@@ -19,6 +20,16 @@ import { vitestSetupFilePath, getClarinetVitestsArgv } from "@hirosystems/clarin
 */
 
 export default defineConfig({
+  plugins: [
+    nodePolyfills({
+      protocolImports: true,
+    }),
+  ],
+  resolve: {
+    alias: {
+      crypto: 'crypto-browserify',
+    },
+  },
   test: {
     environment: "clarinet", // use vitest-environment-clarinet
     pool: "forks",
