@@ -9,7 +9,6 @@
   - [Governance Process](#governance-process)
     - [Submission](#submission)
     - [Voting](#voting)
-        - [⚠️ Note: One vote equals one VIBES Token. The tokens are locked for the period of voting.](#️-note-one-vote-equals-one-vibes-token-the-tokens-are-locked-for-the-period-of-voting)
     - [Conclusion](#conclusion)
     - [Reclaiming Tokens](#reclaiming-tokens)
 ## Introduction
@@ -68,7 +67,7 @@ Now, the proposal is live on the DAO. The voting starts after the delay period e
 
 Once a proposal is submitted, community members can vote on it. The voting process ensures that decisions are made democratically and reflect the collective will of the community.
 
-##### ⚠️ Note: One vote equals one VIBES Token. The tokens are locked for the period of voting.
+**⚠️ Note: One vote equals one VIBES Token. The tokens are locked for the period of voting.**
 
 **Step 1:** Open the proposal from the "All Proposals" section
 
