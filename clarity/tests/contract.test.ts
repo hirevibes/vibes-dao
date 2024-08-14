@@ -21,7 +21,7 @@ function structuredDataHash(structuredData:any) {
 
 function makeStructuredData(proposalName:any) {
   return Cl.tuple({
-    proposalPrincipal: Cl.principal(proposalName),
+    proposalName: Cl.principal(proposalName),
     sender: Cl.principal(deployer),
   });
 }
