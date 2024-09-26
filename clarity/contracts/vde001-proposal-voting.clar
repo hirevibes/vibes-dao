@@ -136,6 +136,10 @@
 
 ;; Reclamation
 
+(define-read-only (is-reclaimed (proposal principal) (voter principal)) 
+	(is-none (map-get? member-total-votes {proposal: proposal, voter: voter}))
+)
+
 (define-public (reclaim-votes (proposal <proposal-trait>))
 	(let
 		(

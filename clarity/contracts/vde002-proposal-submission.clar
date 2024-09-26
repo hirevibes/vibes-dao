@@ -54,7 +54,7 @@
 
 (define-private (make-hash (proposal-principal principal)) 
 
-    (sha256 (unwrap-panic (to-consensus-buff? {proposalPrincipal: proposal-principal, sender: tx-sender})))
+    (sha256 (unwrap-panic (to-consensus-buff? {proposalName: proposal-principal, sender: tx-sender})))
 )
 
 ;; --- Public functions
