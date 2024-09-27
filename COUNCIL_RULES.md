@@ -7,7 +7,7 @@ This document explains the steps through which a proposer receives the requested
 Once a proposal is submitted and voted upon, if the proposal receives more "For" votes than "Against" votes and is concluded by the proposer, the **initial requested amount** will be disbursed **immediately**. The following steps outline the process:
 
 1. **Submit a Proposal**:
-   - Community members submit a proposal detailing the project and funding requirements.
+   - Proposer submit a proposal detailing the project and funding requirements.
    
 2. **Voting Process**:
    - After a delay period for discussion, the community votes on the proposal.
@@ -23,7 +23,7 @@ The remaining requested amount will not be released immediately. Instead, it wil
 
 1. **Progress Submission**:
    - The proposer is required to submit regular progress updates, including relevant details and results of the project.
-   - These updates must be shared via a **GitHub link**, where the council members can track and verify the progress.
+   - These updates must be shared via a [GitHub Link](https://github.com/hirevibes/VibesDao-Example-Proposal), where the council members can track and verify the progress.
 
 2. **Council Review**:
    - Council members will review the submitted progress through the provided GitHub link.
