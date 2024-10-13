@@ -134,6 +134,24 @@
 	)
 )
 
+;; Discard
+
+(define-public (discard (proposal-address principal))
+	(let
+		(
+			(proposal-data (unwrap! (map-get? proposals proposal-address) err-unknown-proposal))
+		)
+		
+		(try! (is-dao-or-extension))
+
+		(asserts! (not (get concluded proposal-data)) err-proposal-already-concluded)
+		(asserts! (>= burn-block-height (get end-block-height proposal-data)) err-end-block-height-not-reached)
+		(map-set proposals proposal-address (merge proposal-data {concluded: true, passed: false}))
+		(print {event: "discard", proposal: proposal-address})
+		(ok false)
+	)
+)
+
 ;; Reclamation
 
 (define-read-only (is-reclaimed (proposal principal) (voter principal)) 
