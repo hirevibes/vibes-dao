@@ -2,8 +2,12 @@
 
 Welcome to the VibesDAO proposal submission guide. Here, we outline the two primary methods for submitting and managing updates to your proposals: **GitHub Repository Format** and **Google Docs Format**. Both methods are designed to ensure clarity, consistency, and efficient tracking of proposal progress.
 
+### IMPORTANT:
+Additionally, please remember to email the VibesDAO team every time you post a new update. You should send an email to hello@hirevibes.io with the subject line including your proposal name (e.g., "VibesDAO Proposal Update - *'Proposal Name'*").
+
 ## Table of Contents
 - [VibesDAO Proposal Update Submission Guide](#vibesdao-proposal-update-submission-guide)
+    - [IMPORTANT:](#important)
   - [Table of Contents](#table-of-contents)
   - [GitHub Repository Format](#github-repository-format)
     - [Repo Name Format](#repo-name-format)
