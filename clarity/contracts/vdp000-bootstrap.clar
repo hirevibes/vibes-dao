@@ -40,6 +40,7 @@
 		(try! (contract-call? .vde005-council set-council-member 'SP3GKTQDK9KXJ3J7JH9KCA24HSHJM74GFCPX3T80S true))
 		(try! (contract-call? .vde005-council set-council-member 'SP7F9EMG5A9BKVBG8N6Q2KD2NQNGXMPB5PFG3E77 true))
 		(try! (contract-call? .vde005-council set-approvals-required u2)) ;; approvals from 2 out of 3 team members requied.
+		(try! (contract-call? .vde005-council set-disapprovals-required u2)) ;; disapprovals from 2 out of 3 team members requied.
 
 
 		(print "VibesDAO is live now.")

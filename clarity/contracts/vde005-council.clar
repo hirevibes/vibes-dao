@@ -43,6 +43,13 @@
 	)
 )
 
+(define-public (set-disapprovals-required (new-requirement uint))
+	(begin
+		(try! (is-dao-or-extension))
+		(ok (var-set council-disapprovals-required new-requirement))
+	)
+)
+
 (define-public (lock-funds (proposal-address principal) (amount uint) (proposer principal)) 
     (begin
         (try! (is-dao-or-extension))
