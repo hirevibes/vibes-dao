@@ -2,7 +2,7 @@
 (impl-trait .extension-trait.extension-trait)
 (use-trait proposal-trait .proposal-trait.proposal-trait)
 
-(define-data-var executive-team-sunset-height uint (+ burn-block-height u4380)) ;; ~1 month from deploy time
+(define-data-var executive-team-sunset-height uint (+ burn-block-height u25920)) ;; ~6 month from deploy time
 
 (define-constant err-unauthorised (err u3000))
 (define-constant err-not-executive-team-member (err u3001))
