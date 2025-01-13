@@ -15,7 +15,7 @@
 (map-set parameters "minimum-proposal-start-delay" u1) ;; ~1 block minimum delay before voting on a proposal can start.
 (map-set parameters "maximum-proposal-start-delay" u1008) ;; ~7 days maximum delay before voting on a proposal can start.
 
-(define-constant pubKey 0x035feea9cee6589bab535144735e9f9d579735dd79c7cdc71e4a008d4850939405)
+(define-constant pubKey 0x03fd36c5c5bb6038c1839a51b91261326d866d8dc18882981d16efef27d42253b6)
 
 ;; --- Authorisation check
 
