@@ -1,10 +1,10 @@
 ;; title: vde005-council
 (impl-trait .extension-trait.extension-trait)
 
-(define-constant err-unauthorised (err u3000))
-(define-constant err-not-council-member (err u3001))
-(define-constant err-proposal-not-found (err u3002))
-(define-constant err-funds-already-unlocked (err u3003))
+(define-constant err-unauthorised (err u6000))
+(define-constant err-not-council-member (err u6001))
+(define-constant err-proposal-not-found (err u6002))
+(define-constant err-funds-already-unlocked (err u6003))
 
 (define-constant council-address (as-contract tx-sender))
 

@@ -4,11 +4,11 @@
 
 (define-data-var executive-team-sunset-height uint (+ burn-block-height u25920)) ;; ~6 month from deploy time
 
-(define-constant err-unauthorised (err u3000))
-(define-constant err-not-executive-team-member (err u3001))
-(define-constant err-already-executed (err u3002))
-(define-constant err-sunset-height-reached (err u3003))
-(define-constant err-sunset-height-in-past (err u3004))
+(define-constant err-unauthorised (err u5000))
+(define-constant err-not-executive-team-member (err u5001))
+(define-constant err-already-executed (err u5002))
+(define-constant err-sunset-height-reached (err u5003))
+(define-constant err-sunset-height-in-past (err u5004))
 
 (define-map executive-team principal bool)
 (define-map executive-action-signals {proposal: principal, team-member: principal} bool)

@@ -5,10 +5,10 @@
 (define-data-var emergency-proposal-duration uint u144) ;; ~1 day
 (define-data-var emergency-team-sunset-height uint (+ burn-block-height u25920)) ;; ~6 months from deploy time
 
-(define-constant err-unauthorised (err u3000))
-(define-constant err-not-emergency-team-member (err u3001))
-(define-constant err-sunset-height-reached (err u3002))
-(define-constant err-sunset-height-in-past (err u3003))
+(define-constant err-unauthorised (err u4000))
+(define-constant err-not-emergency-team-member (err u4001))
+(define-constant err-sunset-height-reached (err u4002))
+(define-constant err-sunset-height-in-past (err u4003))
 
 (define-map emergency-team principal bool)
 

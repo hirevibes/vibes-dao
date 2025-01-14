@@ -4,9 +4,9 @@
 (use-trait proposal-trait .proposal-trait.proposal-trait)
 (use-trait extension-trait .extension-trait.extension-trait)
 
-(define-constant err-unauthorised (err u1000))
-(define-constant err-already-executed (err u1001))
-(define-constant err-invalid-extension (err u1002))
+(define-constant err-unauthorised (err u9000))
+(define-constant err-already-executed (err u9001))
+(define-constant err-invalid-extension (err u9002))
 
 (define-data-var executive principal tx-sender)
 (define-map executed-proposals principal uint)

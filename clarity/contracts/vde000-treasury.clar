@@ -4,9 +4,9 @@
 (use-trait sip9 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait.nft-trait)
 (use-trait sip10 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard.sip-010-trait)
 
-(define-constant err-unauthorised (err u3000))
-(define-constant err-not-token-owner (err u4))
-(define-constant err-asset-not-whitelisted (err u3201))
+(define-constant err-unauthorised (err u1000))
+(define-constant err-not-token-owner (err u1001))
+(define-constant err-asset-not-whitelisted (err u1002))
 
 
 (define-constant treasury-address (as-contract tx-sender))
