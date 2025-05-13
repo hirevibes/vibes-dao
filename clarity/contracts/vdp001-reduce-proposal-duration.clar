@@ -1,10 +1,6 @@
 ;; Title: VDP001 Reduce Proposal Duration
 ;; Description: This contract is used to reduce the proposal duration for VibesDAO to ensure easier testing on mainet.
 
-;; ------------------------------------------------
-;; All the principal IDs are for testnet.
-;; ------------------------------------------------
-
 (impl-trait .proposal-trait.proposal-trait)
 
 (define-public (execute (sender principal))
